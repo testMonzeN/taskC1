@@ -1,3 +1,3 @@
-@ECHO OFF
 netsh interface set interface "Wireless Network Connection" admin=enabled
-net start Wlansvc
+sc config wzcsvc start= auto
+net start wzcsvc

